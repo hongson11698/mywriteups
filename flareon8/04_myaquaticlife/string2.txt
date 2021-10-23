@@ -1,0 +1,358 @@
+FLOSS static ASCII strings
+C:\Users\Sown\AppData\Local\Temp\MMBPlayer
+C:\Users\Sown\AppData\Local\Temp
+C:\WINDOWS
+C:\WINDOWS\system32
+CBK_Time
+CBK_TimeSec
+CBK_AudioBit
+CBK_Total
+CBK_TotalSec
+CBK_AudioName
+CBK_AudioType
+CBK_AudioFreq
+CBK_Channels
+CBK_ID3Song
+CBK_ID3Artist
+CBK_ID3Album
+CBK_ID3Year
+CBK_ID3Genre
+CBK_Total
+CBK_TotalSec
+CBK_AudioName
+CBK_NumTracks
+CBK_CurItemList
+CBK_NumInList
+CBK_TotalList
+CBK_TotalListSec
+CBK_TimeHMS
+CBK_Time24
+CBK_Hour
+CBK_Minute
+CBK_Second
+CBK_Year
+CBK_Month
+CBK_MonthNum
+CBK_Day
+CBK_DayNum
+CBK_DateNum
+CBK_DateShort
+CBK_DateLong
+CBK_VTime
+CBK_VTimeSec
+CBK_VFrame
+CBK_VName
+CBK_VTotal
+CBK_VTotalSec
+CBK_VTotalFrames
+<SrcDir>
+<SrcDrive>
+<CD>
+<File>
+<Embedded>
+<Windows>
+<System>
+<Temp>
+Multimedia Player 4.9.8
+Master Page 000
+lareon2021\04_myaquaticlife\myaquaticlife.exe
+Backups\CTF\flareon2021\04_myaquaticlife
+D:\Backups\CTF\flareon2021\04_myaquaticlife
+Master Layer 000
+areon2021\04_myaquaticlife\myaquaticlife.exe
+Backups\CTF\flareon2021\04_myaquaticlife
+D:\Backups\CTF\flareon2021\04_myaquaticlife
+Images
+ups\CTF\flareon2021\04_myaquaticlife\myaquaticlife.exe
+D:\Backups\CTF\flareon2021\04_myaquaticlife
+D:\Backups\CTF\flareon2021\04_myaquaticlife\myaquaticlife.HLP
+333333
+MediaChance
+What's your favorite aquatic animal?
+MyApp
+script:Script1
+unxQ%gq#rtjuu
+{!fhvjuulkjspx$mukz$ifvdiwD"
+CBK_AppFileName
+lareon2021\04_myaquaticlife\myaquaticlife.exe
+Page 1
+ups\CTF\flareon2021\04_myaquaticlife\myaquaticlife.exe
+D:\Backups\CTF\flareon2021\04_myaquaticlife
+Browser
+<Embedded>\index.html
+Script15
+Any comments here
+Script3
+part4$='derelict:RTYXAc'
+PlugIn
+part4$
+Any comments here
+Script5
+part2$='flotsam:DFWEyEW'
+PlugIn
+part2$
+Any comments here
+Script11
+part2$='derelict:LDNCVYU'
+PlugIn
+part2$
+Any comments here
+Script1
+part1$='jetsam:SLdkv'
+PlugIn
+part1$
+Any comments here
+Script9
+part1$='derelict:MZZWP'
+PlugIn
+part1$
+Any comments here
+Script7
+part1$='lagan:rOPFG'
+PlugIn
+part1$
+Any comments here
+Script8
+part2$='jetsam:newaui'
+PlugIn
+part2$
+Any comments here
+Script2
+part3$='lagan:QICMX'
+PlugIn
+part3$
+Any comments here
+Script10
+part2$='lagan:BAJkR'
+PlugIn
+part2$
+Any comments here
+Script6
+part3$='jetsam:HwdwAZ'
+PlugIn
+part3$
+Any comments here
+Script12
+part3$='derelict:yXQsGB'
+PlugIn
+sers\Sown\AppData\Local\Temp\MMBPlayer\email.gif
+ Arial
+ Arial
+ Arial
+ Arial
+ Arial
+ Arial
+ Arial
+ Arial
+ Arial
+ Arial
+ Arial
+ Arial
+part3$
+Any comments here
+Script17
+part2$='derelict:LSZvYSFHW'
+PlugIn
+part2$
+Any comments here
+Script14
+PlugIn
+PluginFunc19
+PlugIn
+var1$
+visitors
+count
+count = count + 1
+visitors
+count
+vc$='Visitor Counter: ' + CHAR(count)
+mytext
+visitlabel$,1050,580,yippy
+visitlabel$
+colr$='TEXTCOLOR=255,0,0'
+outlabel$
+colr$
+outlabel$
+FONTNAME=Comic Sans MS
+outlabel$
+FONTSIZE=24
+colors$[1] = '255,0,0'
+colors$[2] = '0,255,0'
+colors$[3] = '0,0,255'
+colors$[4] = '255,0,0'
+colors$[5] = '0,255,0'
+colors$[6] = '0,0,255'
+colors$[7] = '255,0,0'
+colors$[8] = '0,255,0'
+colors$[9] = '0,0,255'
+colors$[10] = '255,0,0'
+colors$[11] = '0,255,0'
+colors$[12] = '0,0,255'
+colors$[13] = '255,0,0'
+colors$[14] = '0,255,0'
+colors$[15] = '0,0,255'
+Loop= 1
+1000
+Counter= 1
+mytext
+outlabel$,20,100 + 50 * Counter,yippy
+outlabel$
+var1$
+colr$='TEXTCOLOR='+colors$[Counter]
+outlabel$
+colr$
+outlabel$
+FONTNAME=Comic Sans MS
+outlabel$
+FONTSIZE=48
+1000
+outlabel$
+Counter
+Loop
+Any comments here
+ Arial
+ Arial
+ Arial
+Script4
+part4$='lagan:GTYAKlwER'
+PlugIn
+part2$
+Any comments here
+Script16
+part1$='flotsam:PXopvM'
+PlugIn
+part1$
+Any comments here
+Script13
+part2$='lagan:GTXI'
+PlugIn
+part2$
+Any comments here
+PlugIn
+part3$='flotsam:BGgsuhn'
+PlugIn
+part3$
+<Embedded>\fathom.dll
+Page 2
+ups\CTF\flareon2021\04_myaquaticlife\myaquaticlife.exe
+D:\Backups\CTF\flareon2021\04_myaquaticlife
+Browser
+<Embedded>\index2.html
+1.gif
+Afx:400000:1883:0:2b1012f8:0
+er, version 4.9.8.13
+2.gif
+rs\Sown\AppData\Local\Temp\MMBPlayer\1.gif
+3.gif
+rs\Sown\AppData\Local\Temp\MMBPlayer\2.gif
+4.gif
+rs\Sown\AppData\Local\Temp\MMBPlayer\3.gif
+5.gif
+rs\Sown\AppData\Local\Temp\MMBPlayer\4.gif
+6.gif
+rs\Sown\AppData\Local\Temp\MMBPlayer\5.gif
+7.gif
+rs\Sown\AppData\Local\Temp\MMBPlayer\6.gif
+8.gif
+rs\Sown\AppData\Local\Temp\MMBPlayer\7.gif
+9.gif
+rs\Sown\AppData\Local\Temp\MMBPlayer\8.gif
+10.gif
+s\Sown\AppData\Local\Temp\MMBPlayer\9.gif
+11.gif
+s\Sown\AppData\Local\Temp\MMBPlayer\10.gif
+12.gif
+s\Sown\AppData\Local\Temp\MMBPlayer\11.gif
+13.gif
+s\Sown\AppData\Local\Temp\MMBPlayer\12.gif
+14.gif
+s\Sown\AppData\Local\Temp\MMBPlayer\13.gif
+banner.gif
+wn\AppData\Local\Temp\MMBPlayer\14.gif
+bg.gif
+s\Sown\AppData\Local\Temp\MMBPlayer\banner.gif
+bg1.png
+\Sown\AppData\Local\Temp\MMBPlayer\bg.gif
+bubbles.gif
+n\AppData\Local\Temp\MMBPlayer\bg1.png
+welcome.gif
+n\AppData\Local\Temp\MMBPlayer\bubbles.gif
+15.gif
+s\Sown\AppData\Local\Temp\MMBPlayer\welcome.gif
+16.gif
+s\Sown\AppData\Local\Temp\MMBPlayer\15.gif
+book.gif
+Sown\AppData\Local\Temp\MMBPlayer\16.gif
+fathom.dll
+wn\AppData\Local\Temp\MMBPlayer\book.gif
+index.html
+wn\AppData\Local\Temp\MMBPlayer\fathom.dll
+index2.html
+n\AppData\Local\Temp\MMBPlayer\index.html
+email.gif
+own\AppData\Local\Temp\MMBPlayer\index2.html
+myaquaticlife.exe
+media Builder, version 4.9.8.13
+don't copy, alright?
+n2021\04_myaquaticlife\myaquaticlife.exe
+CBK_Error
+\CTF\flareon2021\04_myaquaticlife
+CBK_PageName
+\AppData\Local\Temp\MMBPlayer\index.html
+Unknown
+Simple plug-in
+om.dll
+2021\04_myaquaticlife\myaquaticlife.exe
+D:\Backups\CTF\flareon2021\04_myaquaticlife
+K_DateLong
+pdata\local\temp
+mmbplayer\index.html
+CBK_URLpath
+ndex.html
+#rtjuui{!fhvjuulkjspx$mukz$ifvdiwD"
+CmdLineParam$[0]
+script:Script1
+ Arial
+ Arial
+ Arial
+ Arial
+ Arial
+FMOD couldn't initialize DirectSound sound device.
+MMBuilder will run without sound support.
+C:\Users\Sown\AppData\Local\Temp\MMBPlayer\index.html
+FSOUND Primary MixBuffer
+ }.w
+English_United States.1252
+Monday
+Tuesday
+Wednesday
+Thursday
+Friday
+Saturday
+Sunday
+January
+February
+March
+April
+June
+July
+August
+September
+October
+November
+December
+M/d/yyyy
+dddd, MMMM d, yyyy
+h:mm:ss tt
+script:script1
+nregistered version of Multimedia Builder 
+If .. Then reached %d levels.
+Script1
+part1$='derelict:MZZWP'
+derelict:MZZWP
+part1$
+derelict:MZZWP
+relict:MZZWP
+
+FLOSS static UTF-16 strings
+

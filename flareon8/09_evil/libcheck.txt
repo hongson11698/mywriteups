@@ -1,0 +1,8 @@
+module_1: 0x00523422: advaapi32
+module_2: 0x00246132: kernel32
+module_3: 0x00176684: ntdll
+module_4: 0x07468951: oleaut32
+module_5: 0x04258672: ole32
+module_6: 0x00052325: ws2_32
+module_7: 0x00234324: user32
+module_8: 0x43493856: gdi32

@@ -1,0 +1,28 @@
+- fire up debuger => failed to debug => add bypass all exception => found total 3 exception code
+- open in ida, check some exception address => found patern to generate exception
+- debug program util before exception then breakpoint on next exception code to traceback
+=> found that program will be patched => compare code before and after to know how it patched
+- endless analyze + debuging to find a way to patch program
+- after first patched analyze program in ida and found that it failed to patched all instruction => manual re-analyze in ida to recongize all function and code
+=> finally patch all exception code access violent and div zero
+=> lucky that it work => got readable decompiler output from ida => got debugable binary
+- debug patched binary => found that it using exception to call api
+- debug program and got all library name hash
+- manual caculate hash of function => resovle api in idapython script => got readable program
+- found some code to antidebug, decide to patch all antidebug code check to nop => lucky that it work and not effect logic of program
+- debug program, manual bypass a exception which not patched, then found program need agrument which is address to bind raw socket to send and recived data
+*** debug program, socket call failed => cant continue debug => dont know why => cry
+*** re-analyze previous code before socket call to check if miss anathing => no thing new => cry => dm @zvikam again and comfirmed that socket call should work
+=> read socket document carefully and found that need administrator privilege to create raw socket => return to debug => socket success => continue debuging
+- keep debug and analyze program then found it has 3 command code
+	+ 1 to print nag and fake flag
+	+ 3 to decrypt internal data with blob key which is blank
+	+ 2 to modify blob key with recv data from socket, 4 byte each time
+- debug and found that blob need set all 16 byte of blob key
+=> understand flow that need call command 2 4 time to fill blob key then call command 3 to get decrypt data
+- debug program => understand command struct data => modify program recviced data to reach command 2 code => success
+- repeat process => found 4 string need when send to whit command 2 => debug and put right string to command 2 to fill in data of blob key => repeat and got 16 byte key
+- using command 3 to get flag faild => upset => recheck, debug again, try to send 4 string again => still failed => cry
+*** dm @zvikam again then know that many people is get fucked by null char too => add null char to string in command struct data => success got right key and got flag
+
+ 

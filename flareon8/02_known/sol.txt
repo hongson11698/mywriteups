@@ -1,0 +1,8 @@
+- look at binary, found decrypt_data function
+- analyse decrypt_data => dec = rol(enc ^ k, i) - i
+- key is 8 character
+- data of file is divide to 8 byte block to decrypt
+- found a encrypted file is a png, header of png is "137 80 78 71 13 10 26 10"
+- try to recovery key from png header => k = ror(enc + i) ^ dec
+- recovery key success then decrypt data
+=> found flag from decrypted data

@@ -1,0 +1,9 @@
+- deobfuscate js script in html file to understand logic
+- found script decrypt a base64 data, output will be a javascript to execute with eval() function
+- key using on decrypt process is 64 bytes long
+*** bruteforce key using z3, thing that using first 64 byte data will work => got more than 500k result and still continue to run
+=> give up => pm @zvikam and know that we need more data for z3 to improve result
+- => increase to 0x4000 byte like hint of @zvikam, found that out put will contain js comment at certain position
+- adjust z3-solver script, add need constrain base on result => repeat for many time => try using text score method to find valid key
+- using valid key, decrypt data and get same function required other 64 bytes key length
+- do the same thing on step 1 and get flag

@@ -1,0 +1,26 @@
+- extract elf file from pcap
+- found golang => try golang script helper
+- found that ghira give better decompiler output => extract data from ida then import to ghidra
+- using both ida and ghidra to analyze, found flow:
+	+ client init beacon irc and some struct with poision name and handler function
+	+ server send posion and list ingredient to combie => client get index from ingredient table in binary to byte array => load result on a vm function => what server send maybe a vm instruction
+	+ server send list description of duegon=> client get index from description list to byte array => after extracted it, clearly understand what it is
+	+ client find handler for posion from what server to it => then execute handler
+	+ afterthat client cast spell from somewhere then report back to server => after extract all data, guess that is output data of executed vm command
+*** spend a week to install irc server, create channel, create user with name from pcap, open edb-debuger, strace, ltrace then tried to send data to client like what in pcap => debug failed due to multithread => stuck, doesnt know how to decode server data and client data
+- decided to try harder on analysis algo of client => finally successfull extract 2 vm program in raw data from posion
+- on high mood, then continue extract 2 parameter => after see 2 parameter, understand what client do and what it send, next step is extract user data send to server
+- tried same appoarch with poision and description => doesnt know what to do with damaged data => stuck => upset again => try to reach @zvikam again then comfirm that the flow is right => decided to dig on spell and finally extracted client data => comfirm that data is encrypted by vm progam with @zvikam.
+*** try to get a decrypt key by xoring output data of first vm with expected output => success got one byte key => very excited => using same key for second data => fail => tried to find xor key base on png header => failed => cry
+*** comback to binary analyze, doesnt know how to use vmprogram from server => cry => ask @zvikam and know that it using a decoder from go package => tried google about decoder and gob format => found pygob library => success decode vmprogram
+- after decode, got vm program in readable format, focus on 2nd vm.
+- analyze cpuExecute function to translate instruction of cpu in vmProgram manully => got result => reading result => readable intruction but flow is wired => cry => dm @zvikam and ask many question => get help and motive to continue
+=> try to write script to translate vm instruction => found that miss understand some concept of data in cpu struct
+*** read result of script and fixing script again and again => still doesnt know the flow => ask @zvikam for help => realise that need link and rom data too.
+- comback to binary vmLoadProgram again to understand how link setup
+*** miss-understand that cpu execute one by one => although understand how what register of cpu link together, still doent understand the flow => cry => ask @zvikam again but because missing certain thing => cant figure out how data is processing thought all cpu
+*** cry and tried to dm other people for help, and @zvikam give a missing piece to help recover png file => finish => crying for the first time after 4 year (2/12; 7/12; 7/12; 10/11)
+- and then, recv hint from @stuxxn that when cpu execute instruction which contain linked reg with other cpu, the linked cpu will be execute => crying alot for dont realise that
+- after understand flow of all cpu and rom, reimplement vm2Program in python => test with header of png and success
+- bruteforce input data with success get flag from decrypted vm.
+

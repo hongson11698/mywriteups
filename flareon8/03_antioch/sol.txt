@@ -1,0 +1,28 @@
+- extract tar file, found some json data and many folder layer, each folder contain
++ layer.tar: raw data
++ json file: metadata information of layer
++ version: version information
+
+- analyze elf file in mainfest layer, the program have 2 main command: "appoarch" and "consult"
+- playing around and put ramdom input
+- when using appoarch command:
++ if specify correct username and color => get # order number of user layer
+
+- when using consult:
++ program will collect data form [a-z].dat file then decrypt it and print the result
+
+- from other layer folder which contain .dat data, each contain an "author" entry => is username
+- found user layer crc32 table data is hardcode in elf binary
+
+=> calculate crc32 of each user layer using "author" entry, then find user's order in crc32 data table.
+
+- get right order, have no idea to continue
+*** spend whole day of thinking how to get flag from username => failed
+*** check twitter and get hint that it is a docker container -> never using docker before
+*** dm @zvikam on twitter(who help me a lot in flareon7) and get advice that need to merge layer data like docker do => have no idea how docker do that
+*** try to install docker, read docs, run some docker command on tar.xz file => fail to understand how it merge layer => cry
+*** dm @zvikam again know that we can do manual, doesnt need docker at all.
+- realise that layer contain .dat file and consult command do something with .dat file on same folder too.
+=> manual copy all dat file from 30 ordered layer folders to same folder of AntiochOS file
+- try excute consult command, it print out flag in ascii format
+

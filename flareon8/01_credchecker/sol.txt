@@ -1,0 +1,4 @@
+- analyze js script in main html file
+- flag will print if username is Admin and password is base64 encode of "goldenticket"
+Admin|Z29sZGVudGlja2V0
+=> using data to get flag

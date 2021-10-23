@@ -1,0 +1,120 @@
+Program Cpu(6):
+CPU0:
+cpu0.cond=00: MOV cpu0.acc, input
+cpu0.cond=00: if cpu0.acc==-1: cpu0.cond=1 else cpu0.cond=-1
+cpu0.cond=01: MOV output, -1
+cpu0.cond=01: MOV cpu0.acc, input
+cpu0.cond=00: MOV cpu0.x2, cpu0.acc # x2 linked with cpu1.x0					# call cpu1	because x2 linked with cpu1.x0, wait ultil cpu1.x0 is set
+cpu0.cond=00: MOV cpu0.acc, cpu0.x2
+cpu0.cond=00: MOV output, cpu0.acc
+
+CPU1:
+cpu1.cond=00: MOV cpu1.acc, cpu1.x0
+cpu1.cond=00: MOV cpu1.x1, cpu1.acc	# call cpu2
+cpu1.cond=00: MOV cpu1.acc, cpu1.x1
+cpu1.cond=00: MOV cpu1.x2, cpu1.acc # call cpu5
+cpu1.cond=00: MOV cpu1.acc, cpu1.x2
+cpu1.cond=00: MOV cpu1.x1, cpu1.acc # call cpu2
+cpu1.cond=00: MOV cpu1.dat, cpu1.x1
+cpu1.cond=00: MOV cpu1.acc, 128
+cpu1.cond=00: AND cpu1.acc, cpu1.dat
+cpu1.cond=00: if cpu1.acc==128: cpu1.cond=1 else cpu1.cond=-1
+cpu1.cond=01: MOV cpu1.acc, cpu1.dat
+cpu1.cond=01: XOR cpu1.acc, 66
+cpu1.cond=-1: MOV cpu1.acc, cpu1.dat
+cpu1.cond=00: XOR cpu1.acc, 0Xffffffff
+cpu1.cond=00: AND cpu1.acc, 255
+cpu1.cond=00: MOV cpu1.x0, cpu1.acc
+
+CPU2:
+cpu2.cond=00: MOV cpu2.acc, cpu2.x0
+cpu2.cond=00: if cpu2.acc>99: cpu2.cond=1 else cpu2.cond=-1
+cpu2.cond=01: MOV cpu2.x3, cpu2.acc	# call cpu3
+cpu2.cond=01: MOV cpu2.x0, cpu2.x3
+cpu2.cond=-1: MOV rom0.x0, cpu2.acc
+cpu2.cond=-1: MOV cpu2.x0, rom0.x1
+
+CPU3:
+cpu3.cond=00: MOV cpu3.acc, cpu3.x0
+cpu3.cond=00: if cpu3.acc>199: cpu3.cond=1 else cpu3.cond=-1
+cpu3.cond=01: MOV cpu3.x3, cpu3.acc	# call cpu4
+cpu3.cond=01: MOV cpu3.x0, cpu3.x3
+cpu3.cond=-1: SUB cpu3.acc, 100
+cpu3.cond=-1: MOV rom1.x0, cpu3.acc
+cpu3.cond=-1: MOV cpu3.x0, rom1.x1
+
+CPU4:
+cpu4.cond=00: MOV cpu4.acc, cpu4.x0
+cpu4.cond=00: SUB cpu4.acc, 200
+cpu4.cond=00: MOV rom2.x0, cpu4.acc
+cpu4.cond=00: MOV cpu4.x0, rom2.x1
+
+CPU5:
+cpu5.cond=00: MOV cpu5.acc, rom3.x0
+cpu5.cond=00: AND cpu5.acc, 1
+cpu5.cond=00: if cpu5.acc==1: cpu5.cond=1 else cpu5.cond=-1
+cpu5.cond=00: MOV cpu5.dat, cpu5.x0
+cpu5.cond=00: MOV cpu5.acc, rom3.x1
+cpu5.cond=01: XOR cpu5.acc, 0Xffffffff
+cpu5.cond=01: AND cpu5.acc, 255
+cpu5.cond=00: XOR cpu5.acc, cpu5.dat
+cpu5.cond=00: MOV cpu5.x0, cpu5.acc
+
+Program Rom(4):
+ROM0:
+ROM(A0=0, A1=0, Data=[90, 132, 6, 69, 174, 203, 232, 243, 87, 254, 166, 61, 94, 65, 8, 208, 51, 34, 33, 129, 32, 221, 0, 160, 35, 175, 113, 4, 139, 245, 24, 29, 225, 15, 101, 9, 206, 66, 120, 62, 195, 55, 202, 143, 100, 50, 224, 172, 222, 145, 124, 42, 192, 7, 244, 149, 159, 64, 83, 229, 103, 182, 122, 82, 78, 63, 131, 75, 201, 130, 114, 46, 118, 28, 241, 30, 204, 183, 215, 199, 138, 16, 121, 26, 77, 25, 53, 22, 125, 67, 43, 205, 134, 171, 68, 146, 212, 14, 152, 20])
+ROM1:
+ROM(A0=0, A1=0, Data=[185, 155, 167, 36, 27, 60, 226, 58, 211, 240, 253, 79, 119, 209, 163, 12, 72, 128, 106, 218, 189, 216, 71, 91, 250, 150, 11, 236, 207, 73, 217, 17, 127, 177, 39, 231, 197, 178, 99, 230, 40, 54, 179, 93, 251, 220, 168, 112, 37, 246, 176, 156, 165, 95, 184, 57, 228, 133, 169, 252, 19, 2, 81, 48, 242, 105, 255, 116, 191, 89, 181, 70, 23, 194, 88, 97, 153, 235, 164, 158, 137, 238, 108, 239, 162, 144, 115, 140, 84, 188, 109, 219, 44, 214, 227, 161, 141, 80, 247, 52])
+ROM2:
+ROM(A0=0, A1=0, Data=[213, 249, 1, 123, 142, 190, 104, 107, 85, 157, 45, 237, 47, 147, 21, 31, 196, 136, 170, 248, 13, 92, 234, 86, 3, 193, 154, 56, 5, 111, 98, 74, 18, 223, 96, 148, 41, 117, 126, 173, 233, 10, 49, 180, 187, 186, 135, 59, 38, 210, 110, 102, 200, 76, 151, 198])
+ROM3:
+ROM(A0=0, A1=0, Data=[97, 49, 49, 95, 109, 89, 95, 104, 111, 109, 49, 101, 115, 95, 104, 52, 116, 51, 95, 98, 52, 114, 100, 115])
+Program Link(16):
+Link0:
+Link(LHDevice=0, LHReg=0, RHDevice=2, RHReg=0)
+set input <=> cpu0.X0
+Link1:
+Link(LHDevice=2, LHReg=1, RHDevice=1, RHReg=0)
+set cpu0.X1 <=> output
+Link2:
+Link(LHDevice=2, LHReg=2, RHDevice=3, RHReg=0)
+set cpu0.X2 <=> cpu1.X0
+Link3:
+Link(LHDevice=3, LHReg=1, RHDevice=4, RHReg=0)
+set cpu1.X1 <=> cpu2.X0
+Link4:
+Link(LHDevice=3, LHReg=1, RHDevice=4, RHReg=0)
+set cpu1.X1 <=> cpu2.X0
+Link5:
+Link(LHDevice=3, LHReg=2, RHDevice=7, RHReg=0)
+set cpu1.X2 <=> cpu5.X0
+Link6:
+Link(LHDevice=4, LHReg=1, RHDevice=8, RHReg=0)
+set cpu2.X1 <=> rom0.X0
+Link7:
+Link(LHDevice=4, LHReg=2, RHDevice=8, RHReg=1)
+set cpu2.X2 <=> rom0.X1
+Link8:
+Link(LHDevice=4, LHReg=3, RHDevice=5, RHReg=0)
+set cpu2.X3 <=> cpu3.X0
+Link9:
+Link(LHDevice=5, LHReg=1, RHDevice=9, RHReg=0)
+set cpu3.X1 <=> rom1.X0
+Link10:
+Link(LHDevice=5, LHReg=2, RHDevice=9, RHReg=1)
+set cpu3.X2 <=> rom1.X1
+Link11:
+Link(LHDevice=5, LHReg=3, RHDevice=6, RHReg=0)
+set cpu3.X3 <=> cpu4.X0
+Link12:
+Link(LHDevice=6, LHReg=1, RHDevice=10, RHReg=0)
+set cpu4.X1 <=> rom2.X0
+Link13:
+Link(LHDevice=6, LHReg=2, RHDevice=10, RHReg=1)
+set cpu4.X2 <=> rom2.X1
+Link14:
+Link(LHDevice=7, LHReg=1, RHDevice=11, RHReg=0)
+set cpu5.X1 <=> rom3.X0
+Link15:
+Link(LHDevice=7, LHReg=2, RHDevice=11, RHReg=1)
+set cpu5.X2 <=> rom3.X1

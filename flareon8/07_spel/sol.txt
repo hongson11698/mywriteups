@@ -1,0 +1,14 @@
+- when close program, a shellcode will be excute on memmory alloc by VirtualAllocExNuma function
+- after some step in shellcode, final dll contain "Start" function will be loaded
+- analyze dll, found first condition to run is name of image is Spell.EXE
+- after that, dll will call a "check" function:
++ "check" function connect to a domain, if it cant connect or not recv correct data from server, program will exits
++ the code after check doesn't do anything with data recv from server
+=> by pass server check by noping "check" call
+- dll encrypt "flare-on.com" string and write to Spell registry key with valuename is "1"
+*** found that dll will continue decrypt a string data => stupidly think that can found flag before it encrypt and write to registry like part1 => got wired string and get stucked
+
+*** think that i missing something with check funciton or orignal pe file => diging check function => found no thing new => crying
+*** diging pe file => tried to understand how it load dll => found nothing new => crying and dm @zvikam for help => know the wired string is not ordered string => return to analyze dll
+=> debug program to get right order and right key for each part of encrypted flag then decrypt flag
+=> merge "0" and "1" data from registry to get full encrypted flag

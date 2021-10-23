@@ -1,0 +1,20 @@
+Program Cpu(2):
+CPU0:
+cond=00: mov acc, x0
+cond=00: if acc==-1: cond=1 else cond=-1
+cond=01: mov x1, -1
+cond=01: mov acc, x0
+cond=00: mov x2, acc
+cond=00: mov acc, x2
+cond=00: mov x1, acc
+CPU1:
+cond=00: mov acc, x0
+cond=00: xor acc, 162
+cond=00: mov x0, acc
+Program Link(3):
+Link0:
+set input <=> cpu(0) x0
+Link1:
+set cpu(0) x1 <=> output
+Link2:
+set cpu(0) x2 <=> cpu(1) x0

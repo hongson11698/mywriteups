@@ -1,0 +1,15 @@
+- analyze pcap, found 2 main converstation between cc server(172.16.111.144) and client(172.16.111.139), all data transfer is begin with custom MEOW header
+- first converstaion contain request/response data to get suspected PA30 file data and a png from cc server(port 7331)
+- second converstaion contain pure PA30 data send to/from cc server(port 1337)
+*** thing that PA30 is custom data format => try to split, cut, append zlib header => failed
+- looking document for PA30 file header, found DeltaAPI: https://github.com/ritsec/RITSEC-CTF-2019/tree/master/Misc/patch-tuesday
+=> patch png file with PA30 file patch and get Payload.dll binary
+- analyze binary, data transfer to/from server though port 1337
+- found method to encrypt data:
+	- Encrypt raw data with XOR key "meoow"
+  	- Using a BMP image resource as Source file
+	- Using CreateDelta to create a path for Source file with encrypted raw data
+	- add MEOW header to patch data
+=> using ApplyDelta apply patch data from pcap to BMP image to recover encrypted rawdata then decrypt it using XOR key "meoow"
+*** dig all decrypted data => run grep command for "@flare-on" => stupid grep agrument so no thing return => cry
+- decide to manual exam data => found flag in decrypted data => the try find a correct grep command => found => cry again

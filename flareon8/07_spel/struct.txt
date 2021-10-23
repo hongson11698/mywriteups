@@ -1,0 +1,16 @@
+typedef struct magic
+{
+    WCHAR currentDate[12];      // 0x0
+    QWORD pngRes;               // +0x18
+    DWORD pngSize;              // +0x20
+    DWORD special2;             // +0x24
+    CHAR modulename[261];       // +0x28 
+    CHAR status[10];            // +0x12d
+    BOOL isWow64;               // +0x150
+    DWORD retryConnectTime;     // +0x154
+    DWORD special3:             // +0x180
+    QWORD flareonStr            // +0x188
+    DWORD minuteToWait;         // +0x190
+    QWORD HashAddr;             // +0x1a0
+    CHAR decryptData[24]        // +0x1a8    
+}

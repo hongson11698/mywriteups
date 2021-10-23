@@ -1,0 +1,20 @@
+- start vm, diging home folder file, found some interesting string and data but have no idea to continue
+- try to grep "flare" and found /usr/bin/dot file, analyze dot file and have no idea to get password
+*** found an alias which give a character of password => think that it is final character => try to bruteforce other characters => failed after a day running
+*** found snapshot folder, google for brtfs partion format and snapshot => try to run other snapshots to find some thing => failed
+*** try to compare others snapshot => using diff command for first time => missing certain commandline param => found no thing => cry
+*** dm @zvikam again and get hint that look for recent modified file and crontab
+- get back to vm, google for crontab, found on archiwiki information on how to using crom  => found a crontab data point to /usr/lib/zyppe binary
+- zyppe binary which is run by crontab will encode all file with .broken extension in ~/Documents folder
+- analyze zyppe, it using XOR method to encrypt data
+=> using same encrypt method with encrypted data to decrypt it back
+- decrypted data contain => found instruction to get all password characters
+=> follow on intruction on data to get all 14 characters of password
+*** stuck at rc4 key => have no idea
+*** pm @zvikam again, and understand that i forgot icream recipe
+*** searching for Bellaso cipher after a day and finally understand that we need vigenere cipher here.
+- 5th character of password is missing
+- analyze dot binary file, found method validate passwith is check by hardcode sha256 checksum
+=> bruteforce 5th character using sha256 checksum to get password
+*** still dont get correct password after bruteforce 5th => cry => dm @zvikam and know that failed to anwser question about flare5-6-7 => need to learn english
+- fixed wrong answer, rerun bruteforce script => got password => put password to dot binary and get flag

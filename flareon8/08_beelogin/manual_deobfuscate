@@ -1,0 +1,5 @@
+- remove garbage functon:
+(function )([\S\s]*?)(?<=^ {4}};)
+
+- remove garbage statement "rFzmLyTiZ6AHlL1Q4xV7G8pW32":
+- remove garbage statement "split" :

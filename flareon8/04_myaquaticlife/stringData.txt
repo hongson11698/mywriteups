@@ -1,0 +1,9 @@
+part1$='flotsam:PXopvM'
+part2$='flotsam:DFWEyEW'
+part3$='flotsam:BGgsuhn'
+
+
+
+part1$='jetsam:SLdkv'
+part2$='jetsam:newaui'
+part3$='jetsam:HwdwAZ'

@@ -1,0 +1,23 @@
+- monitor pe file when running with procmon and procexp
+- found program using dll "fathom.dll" to perform some data assign and validate flag
+- debug program, put breakpoint on every entry of exported function in dll and select random gif to know how dll handler when image is selected
+- when select a gif, fathom.dll using SetFile function to do somthing with data it recvice and assign data to derelict, flot, lagan, jet variable in fathom.dll
+-> try to select all image to get the value of each one then click on check button => found function it using to check and printout result
+- analyse check function, only Jet and Flot data effect flag validate result
+- found flag validate method
++ flag[i] = (initdata[i] ^ flot[i]) - jet[i])
++ flag md5 == 6c5215b12a10e936f8de1e42083ba184
+- init data is hardcode in dll
+- while breakon SetFIle function, looking around memory dump and lucky found some readable script, get 3 part of flot and jet script:
+part1$='flotsam:PXopvM'
+part2$='flotsam:DFWEyEW'
+part3$='flotsam:BGgsuhn'
+
+part1$='jetsam:SLdkv'
+part2$='jetsam:newaui'
+part3$='jetsam:HwdwAZ'
+
+- Try collected data to get recover flag and lucky that it work
+=> flag[i] = (initdata[i] ^ flot[i]) - jet[i]
+
+
